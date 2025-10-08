@@ -10,7 +10,8 @@ import { ImageService } from '../../services/image.service';
   selector: 'app-home',
   standalone: true,
   imports: [RouterLink, NgFor, NgStyle, NgClass],
-  templateUrl: './home.component.html'
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
   images: string[] = [];
