@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
+import { NgFor } from '@angular/common';
 
 @Component({
   selector: 'app-team',
   standalone: true,
+  imports: [NgFor],
   templateUrl: './team.component.html'
 })
 export class TeamComponent {
