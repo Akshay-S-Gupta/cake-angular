@@ -9,18 +9,21 @@ import { TeamComponent } from './pages/team/team.component';
 import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
 import { SignInComponent } from './pages/sign-in/sign-in.component';
 import { SignUpComponent } from './pages/sign-up/sign-up.component';
-import { AboutComponent } from './pages/about/about.component';
 import { PaymentGatewayComponent } from './pages/payment-gateway/payment-gateway.component';
+import { PaymentSuccessComponent } from './pages/payment-success/payment-success.component';
+import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'shop', component: ShopComponent },   
   { path: 'cart', component: CartComponent },
   { path: 'team', component: TeamComponent },
-  { path: 'about', component: AboutComponent },
   { path: 'product/:id', component: ProductDetailComponent },
   { path: 'sign-in', component: SignInComponent },
   { path: 'sign-up', component: SignUpComponent },
+  { path: 'forgot-password', component: ForgotPasswordComponent },
   { path: 'checkout', component: CheckoutComponent },
   { path: 'payment-gateway', component: PaymentGatewayComponent },
+  { path: 'payment-success', component: PaymentSuccessComponent },
+  { path: '**', redirectTo: '' } // Wildcard route for 404
 ];

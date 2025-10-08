@@ -20,9 +20,7 @@
     <div class="container">
       <div class="text-center">
         <h2 class="mb-4">Your cart is empty</h2>
-        <p class="text-muted mb-4">
-          Please add items to your cart before proceeding to checkout.
-        </p>
+        <p class="text-muted mb-4">Please add items to your cart before proceeding to checkout.</p>
         <a routerLink="/shop" class="btn btn-primary-custom">Continue Shopping</a>
       </div>
     </div>
@@ -51,7 +49,7 @@
   <!-- Checkout Form -->
   <section class="py-5">
     <div class="container">
-      <form (ngSubmit)="onSubmit($event)">
+      <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
         <div class="row">
           <!-- Billing Details -->
           <div class="col-lg-8">
@@ -66,22 +64,30 @@
                     <input
                       type="text"
                       class="form-control"
-                      name="firstName"
-                      [(ngModel)]="formData.firstName"
-                      (input)="onInputChange($event)"
-                      required
+                      formControlName="firstName"
+                      [class.is-invalid]="
+                        checkoutForm.get('firstName')?.invalid &&
+                        checkoutForm.get('firstName')?.touched
+                      "
                     />
+                    <div class="invalid-feedback" *ngIf="getFieldError('firstName')">
+                      {{ getFieldError('firstName') }}
+                    </div>
                   </div>
                   <div class="col-md-6 mb-3">
                     <label class="form-label">Last Name *</label>
                     <input
                       type="text"
                       class="form-control"
-                      name="lastName"
-                      [(ngModel)]="formData.lastName"
-                      (input)="onInputChange($event)"
-                      required
+                      formControlName="lastName"
+                      [class.is-invalid]="
+                        checkoutForm.get('lastName')?.invalid &&
+                        checkoutForm.get('lastName')?.touched
+                      "
                     />
+                    <div class="invalid-feedback" *ngIf="getFieldError('lastName')">
+                      {{ getFieldError('lastName') }}
+                    </div>
                   </div>
                 </div>
 
@@ -91,18 +97,20 @@
                     type="text"
                     class="form-control mb-2"
                     placeholder="House number and street name"
-                    name="streetAddress"
-                    [(ngModel)]="formData.streetAddress"
-                    (input)="onInputChange($event)"
-                    required
+                    formControlName="streetAddress"
+                    [class.is-invalid]="
+                      checkoutForm.get('streetAddress')?.invalid &&
+                      checkoutForm.get('streetAddress')?.touched
+                    "
                   />
+                  <div class="invalid-feedback" *ngIf="getFieldError('streetAddress')">
+                    {{ getFieldError('streetAddress') }}
+                  </div>
                   <input
                     type="text"
                     class="form-control"
                     placeholder="Apartments, suite, etc."
-                    name="apartment"
-                    [(ngModel)]="formData.apartment"
-                    (input)="onInputChange($event)"
+                    formControlName="apartment"
                   />
                 </div>
 
@@ -112,26 +120,32 @@
                     <input
                       type="text"
                       class="form-control"
-                      name="city"
-                      [(ngModel)]="formData.city"
-                      (input)="onInputChange($event)"
-                      required
+                      formControlName="city"
+                      [class.is-invalid]="
+                        checkoutForm.get('city')?.invalid && checkoutForm.get('city')?.touched
+                      "
                     />
+                    <div class="invalid-feedback" *ngIf="getFieldError('city')">
+                      {{ getFieldError('city') }}
+                    </div>
                   </div>
                   <div class="col-md-6 mb-3">
                     <label class="form-label">State *</label>
                     <select
                       class="form-select"
-                      name="state"
-                      [(ngModel)]="formData.state"
-                      (change)="onInputChange($event)"
-                      required
+                      formControlName="state"
+                      [class.is-invalid]="
+                        checkoutForm.get('state')?.invalid && checkoutForm.get('state')?.touched
+                      "
                     >
                       <option value="Karnataka">Karnataka</option>
                       <option value="Tamil Nadu">Tamil Nadu</option>
                       <option value="Madhya Pradesh">Madhya Pradesh</option>
                       <option value="Maharashtra">Maharashtra</option>
                     </select>
+                    <div class="invalid-feedback" *ngIf="getFieldError('state')">
+                      {{ getFieldError('state') }}
+                    </div>
                   </div>
                 </div>
 
@@ -141,22 +155,28 @@
                     <input
                       type="text"
                       class="form-control"
-                      name="zipCode"
-                      [(ngModel)]="formData.zipCode"
-                      (input)="onInputChange($event)"
-                      required
+                      formControlName="zipCode"
+                      [class.is-invalid]="
+                        checkoutForm.get('zipCode')?.invalid && checkoutForm.get('zipCode')?.touched
+                      "
                     />
+                    <div class="invalid-feedback" *ngIf="getFieldError('zipCode')">
+                      {{ getFieldError('zipCode') }}
+                    </div>
                   </div>
                   <div class="col-md-6 mb-3">
                     <label class="form-label">Phone *</label>
                     <input
                       type="tel"
                       class="form-control"
-                      name="phone"
-                      [(ngModel)]="formData.phone"
-                      (input)="onInputChange($event)"
-                      required
+                      formControlName="phone"
+                      [class.is-invalid]="
+                        checkoutForm.get('phone')?.invalid && checkoutForm.get('phone')?.touched
+                      "
                     />
+                    <div class="invalid-feedback" *ngIf="getFieldError('phone')">
+                      {{ getFieldError('phone') }}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -187,12 +207,7 @@
             </div>
 
             <div class="card">
-              <button
-                type="submit"
-                class="btn btn-primary-custom w-100"
-              >
-                PLACE AN ORDER
-              </button>
+              <button type="submit" class="btn btn-primary-custom w-100">PLACE AN ORDER</button>
             </div>
           </div>
         </div>
@@ -200,5 +215,3 @@
     </div>
   </section>
 </div>
-
-

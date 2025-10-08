@@ -21,7 +21,7 @@
 <section class="py-5">
   <div class="container">
 
-    <!-- Filters and Sorting Row -->
+    <!-- Results and Sorting Row -->
     <div class="row mb-4">
       <div class="col-md-6">
         <p class="mb-0 text-muted">
@@ -30,7 +30,7 @@
       </div>
       <div class="col-md-6">
         <div class="d-flex justify-content-md-end">
-          <select class="form-select" style="max-width: 225px;"
+          <select class="form-select shop-sort-select"
                   [(ngModel)]="sortBy">
             <option value="default">Default Sorting</option>
             <option value="price-low">Sort by price: low to high</option>
@@ -42,11 +42,11 @@
     </div>
 
     <!-- Category Filter Row -->
-    <div class="row mb-4">
+    <div class="row mb-5">
       <div class="col-12">
-        <div class="d-flex flex-wrap gap-2">
+        <div class="d-flex flex-wrap gap-2 justify-content-center">
           <button *ngFor="let category of categories"
-                  class="btn"
+                  class="btn shop-filter-btn"
                   [ngClass]="selectedCategory === category.name ? 'btn-primary' : 'btn-outline-primary'"
                   (click)="setSelectedCategory(category.name)">
             {{ category.name }}
@@ -56,11 +56,10 @@
     </div>
 
     <!-- Products Grid -->
-    <div class="row">
-      <div *ngFor="let product of sortedProducts" class="col-lg-3 col-md-4 col-sm-6 mb-4">
+    <div class="row g-4">
+      <div *ngFor="let product of sortedProducts" class="col-lg-3 col-md-4 col-sm-6">
         <div class="card product-card h-100 text-decoration-none">
           <div class="product-image-wrapper position-relative">
-
             <a [routerLink]="['/product', product.id]" tabindex="-1">
               <img [src]="product.mainImage"
                    class="card-img-top product-image"
@@ -72,15 +71,13 @@
                     type="button"
                     (click)="addToCart(product); $event.preventDefault(); $event.stopPropagation();"
                     [attr.aria-label]="isInCart(product.id) ? 'Added to cart' : 'Add to cart'"
-                    [disabled]="isInCart(product.id)"
-                    style="position:absolute;top:10px;right:10px;z-index:5;background:white;border:none;border-radius:50%;padding:6px;">
+                    [disabled]="isInCart(product.id)">
               <img [src]="isInCart(product.id) ? 'assets/Icons/tick.png' : 'assets/Icons/cart.png'"
                    [alt]="isInCart(product.id) ? 'Added to cart' : 'Add to cart'"
-                   class="cart-icon-img"
-                   style="width:24px;height:24px;" />
+                   class="cart-icon-img" />
             </button>
-
           </div>
+          
           <div class="card-body text-center d-flex flex-column">
             <div class="product-info">
               <h5 class="card-title product-title">{{ product.name }}</h5>

@@ -58,37 +58,46 @@
   }
 }
 
-/* Home Product Card */
+/* Modern Home Product Card */
 .home-product-card {
   background: #fff;
-  border-radius: 1.25rem;
-  box-shadow: 0 2px 12px rgba(20, 40, 60, 0.08);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
   overflow: hidden;
-  transition: box-shadow 0.15s;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-width: 220px;
-  max-width: 240px;
-  border: 1px solid #eee;
-  padding: 1rem;
+  min-width: 240px;
+  max-width: 260px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0;
+  position: relative;
+  backdrop-filter: blur(10px);
 }
 .home-product-card:hover {
-  box-shadow: 0 4px 22px rgba(20, 40, 60, 0.16);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  transform: translateY(-8px);
+  border: 1px solid rgba(55, 99, 235, 0.2);
 }
 .card-body {
   flex: 1 1 auto;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  padding: 20px;
+  background: linear-gradient(135deg, #fafafa 0%, #ffffff 100%);
 }
 .home-product-image {
-  border-top-left-radius: 1.25rem;
-  border-top-right-radius: 1.25rem;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
   width: 100%;
   object-fit: cover;
-  height: 220px;
-  margin-bottom: 1rem;
+  height: 240px;
+  transition: transform 0.3s ease;
+}
+.home-product-card:hover .home-product-image {
+  transform: scale(1.05);
 }
 @media (max-width: 991.98px) {
   .home-product-card {
@@ -123,37 +132,51 @@
   }
 }
 
-/* Home Card Title & Font */
+/* Modern Home Card Title & Font */
 .home-card-title,
 .script-font {
-  font-family: "Dancing Script", cursive;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
 }
 .home-card-title {
-  font-size: 1.15rem;
+  font-size: 1.2rem;
+  color: #1f2937;
+  line-height: 1.4;
+  margin-bottom: 8px;
 }
 
-/* Price & Danger Color */
+/* Modern Price & Danger Color */
 .home-text-danger {
-  color: #d32f2f;
+  color: #dc2626;
+  font-weight: 700;
+  font-size: 1.1rem;
 }
 
-/* Star Rating Color */
+/* Modern Star Rating */
 .home-star {
-  color: #ffbf00;
+  color: #fbbf24;
+  font-size: 0.9rem;
+  margin-right: 2px;
 }
 
-/* "View Details" & Outline Button */
+/* Modern "View Details" Button */
 .home-btn-outline-primary {
-  border: 1.5px solid #3763eb;
-  color: #3763eb;
+  border: 2px solid #3b82f6;
+  color: #3b82f6;
   background: #fff;
-  transition: 0.2s;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   font-weight: 600;
   text-transform: uppercase;
+  border-radius: 12px;
+  padding: 10px 20px;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
 }
 .home-btn-outline-primary:hover {
-  background: #3763eb;
+  background: #3b82f6;
   color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
 }
 
 /* Promotional Section */
