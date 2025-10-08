@@ -1,0 +1,193 @@
+/* Home Page Specific Styles */
+
+/* Banner & Hero Section */
+.banner-section {
+  background: url("/assets/Banner/banner5.png") no-repeat top/cover;
+  padding: 80px 0;
+  position: relative;
+  overflow: hidden;
+}
+.banner-section::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: url("/assets/images/banner-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.1;
+  z-index: 1;
+}
+.banner-content {
+  position: relative;
+  z-index: 2;
+}
+.banner-title {
+  font-family: "Dancing Script", cursive;
+  font-size: 4rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 20px;
+}
+@media (max-width: 768px) {
+  .banner-title {
+    font-size: 2.5rem;
+  }
+}
+
+/* Hero Section (optional, if separate from banner) */
+.hero-section {
+  background-image: url("/assets/Banner/banner4.jpg");
+  background-size: cover;
+}
+
+/* Product Carousel */
+.product-carousel {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  gap: 1.5rem;
+  margin: 2rem 0;
+  padding-bottom: 1rem;
+}
+.product-carousel::-webkit-scrollbar {
+  display: none;
+}
+@media (max-width: 991.98px) {
+  .product-carousel {
+    gap: 1rem;
+  }
+}
+
+/* Modern Home Product Card */
+.home-product-card {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 240px;
+  max-width: 260px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0;
+  position: relative;
+  backdrop-filter: blur(10px);
+}
+.home-product-card:hover {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  transform: translateY(-8px);
+  border: 1px solid rgba(55, 99, 235, 0.2);
+}
+.card-body {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  background: linear-gradient(135deg, #fafafa 0%, #ffffff 100%);
+}
+.home-product-image {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  width: 100%;
+  object-fit: cover;
+  height: 240px;
+  transition: transform 0.3s ease;
+}
+.home-product-card:hover .home-product-image {
+  transform: scale(1.05);
+}
+@media (max-width: 991.98px) {
+  .home-product-card {
+    min-width: 48vw;
+    max-width: 90vw;
+  }
+  .home-product-image {
+    height: 180px;
+  }
+}
+@media (max-width: 767.98px) {
+  .home-product-card {
+    min-width: 90vw;
+    max-width: 97vw;
+    margin-bottom: 1.2rem;
+  }
+  .home-product-image {
+    height: 180px;
+  }
+}
+
+/* Responsive grid columns */
+@media (max-width: 991.98px) {
+  .col-lg-3.home-grid-col { flex: 0 0 50%; max-width: 50%; }
+}
+@media (max-width: 767.98px) {
+  .col-lg-3.home-grid-col,
+  .col-md-4.home-grid-col,
+  .col-sm-6.home-grid-col {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+/* Modern Home Card Title & Font */
+.home-card-title,
+.script-font {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+}
+.home-card-title {
+  font-size: 1.2rem;
+  color: #1f2937;
+  line-height: 1.4;
+  margin-bottom: 8px;
+}
+
+/* Modern Price & Danger Color */
+.home-text-danger {
+  color: #dc2626;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+/* Modern Star Rating */
+.home-star {
+  color: #fbbf24;
+  font-size: 0.9rem;
+  margin-right: 2px;
+}
+
+/* Modern "View Details" Button */
+.home-btn-outline-primary {
+  border: 2px solid #3b82f6;
+  color: #3b82f6;
+  background: #fff;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-weight: 600;
+  text-transform: uppercase;
+  border-radius: 12px;
+  padding: 10px 20px;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+}
+.home-btn-outline-primary:hover {
+  background: #3b82f6;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
+}
+
+/* Promotional Section */
+.promotional-section {
+  background-image: url("/assets/Banner/banner2.jpg");
+  background-size: cover;
+}
+
+/* Highlight Images */
+.highlight-image {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 1.2rem;
+}

@@ -1,16 +1,60 @@
-/* Global Styles copied from React App.css and adjusted for Angular assets */
+/* Global Styles */
+/*css*/
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   line-height: 1.6;
-  color: #333;
+  color: #1f2937;
+  background-color: #fafafa;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
+
 .script-font {
-  font-family: 'Dancing Script', cursive;
+  font-family: "Dancing Script", cursive;
+}
+
+/* Modern Button Styles */
+.btn-primary-custom {
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  border: none;
+  border-radius: 12px;
+  padding: 12px 24px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.btn-primary-custom:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.4);
+  background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+}
+
+.btn-outline-custom {
+  border: 2px solid #3b82f6;
+  color: #3b82f6;
+  background: transparent;
+  border-radius: 12px;
+  padding: 12px 24px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-outline-custom:hover {
+  background: #3b82f6;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
 }
 
 /* Header Styles */
@@ -19,17 +63,20 @@ body {
   padding: 10px 0;
   border-bottom: 1px solid #eee;
 }
+
 .header-main {
   background-color: #fff;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
+
 .logo {
-  font-family: 'Dancing Script', cursive;
+  font-family: "Dancing Script", cursive;
   font-size: 2.5rem;
   font-weight: 700;
   color: #333;
   text-decoration: none;
 }
+
 .nav-link {
   font-weight: 500;
   color: #333 !important;
@@ -37,52 +84,72 @@ body {
   margin: 0 15px;
   transition: color 0.3s ease;
 }
+
 .nav-link:hover {
   color: #dc3545 !important;
 }
+
 .social-icons a {
   color: #333;
   margin: 0 10px;
   font-size: 1.2rem;
   transition: color 0.3s ease;
 }
+
 .social-icons a:hover {
   color: #dc3545;
 }
 
 /* Banner Styles */
 .banner-section {
-  background: url('assets/Banner/banner5.png') no-repeat top/cover;
+  background: url("/assets/Banner/banner5.png") no-repeat top/cover;
   padding: 80px 0;
   position: relative;
   overflow: hidden;
 }
+
 .banner-section::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url('assets/Banner/banner6.jpg');
+  background-image: url("/images/banner-bg.jpg");
   background-size: cover;
   background-position: center;
   opacity: 0.1;
   z-index: 1;
 }
+
 .banner-content {
   position: relative;
   z-index: 2;
 }
+
 .banner-title {
-  font-family: 'Dancing Script', cursive;
+  font-family: "Dancing Script", cursive;
   font-size: 4rem;
   font-weight: 700;
   color: #fff;
   margin-bottom: 20px;
 }
 
-/* Buttons */
+.breadcrumb {
+  background: none;
+  padding: 0;
+  margin: 0;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+  content: ">";
+}
+
+.breadcrumb-item a {
+  color: black !important;
+}
+
+/* Button Styles */
 .btn-primary-custom {
   background-color: #dc3545;
   border-color: #dc3545;
@@ -93,11 +160,13 @@ body {
   border-radius: 5px;
   transition: all 0.3s ease;
 }
+
 .btn-primary-custom:hover {
   background-color: #c82333;
   border-color: #bd2130;
   transform: translateY(-2px);
 }
+
 .btn-outline-custom {
   border: 2px solid #fff;
   color: #fff;
@@ -107,68 +176,187 @@ body {
   border-radius: 0;
   transition: all 0.3s ease;
 }
+
 .btn-outline-custom:hover {
   background-color: #fff;
   color: #333;
 }
 
-/* Hero/Promo backgrounds (if used) */
+/* Hero Section */
 .hero-section {
-  background-image: url('assets/Banner/banner4.jpg');
-  background-size: cover;
-}
-.promotional-section {
-  background-image: url('assets/Banner/banner2.jpg');
+  background-image: url("/assetsBanner/banner4.jpg");
   background-size: cover;
 }
 
-/* Newsletter */
+/* Carousel wrapper positions arrows */
+.cards-carousel-wrapper {
+  position: relative;
+  margin-top: 20px;
+}
+
+/* Horizontally scrollable row */
+.cards-carousel {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #ccc #f5f5f5;
+  padding-bottom: 8px;
+}
+
+/* Hide native scrollbars if you want */
+.cards-carousel::-webkit-scrollbar {
+  height: 8px;
+}
+.cards-carousel::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 4px;
+}
+
+/* Arrow buttons styling */
+.carousel-arrow-left,
+.carousel-arrow-right {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #fff;
+  border: none;
+  font-size: 2rem;
+  color: #d6a47a;
+  z-index: 2;
+  padding: 0.25em 0.5em;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.carousel-arrow-left:hover,
+.carousel-arrow-right:hover {
+  background: #faf8f7;
+}
+
+.carousel-arrow-left {
+  left: -2.5rem;
+}
+
+.carousel-arrow-right {
+  right: -2.5rem;
+}
+
+@media (max-width: 768px) {
+  .carousel-arrow-left {
+    left: -1.5rem;
+  }
+  .carousel-arrow-right {
+    right: -1.5rem;
+  }
+}
+
+/* Promotional Section  */
+.video-section {
+  background: #222;
+  padding: 0;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 720px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.promo-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  object-fit: contain;
+  border-radius: 0;
+  z-index: 1;
+}
+
+.promo-landscape {
+  display: block;
+
+}
+.promo-portrait {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .video-container {
+    height: 720px;
+  }
+  .promo-landscape {
+    display: none;
+  }
+  .promo-portrait {
+    display: block;
+  }
+}
+
+/* Newsletter Section */
 .newsletter-section {
   background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
   padding: 80px 0;
   position: relative;
   overflow: hidden;
 }
+
 .newsletter-section::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url('assets/Banner/banner6.jpg');
+  background-image: url("/assets/Banner/banner6.jpg");
   background-size: cover;
   background-position: center;
   z-index: 1;
 }
+
 .newsletter-content {
   position: relative;
   z-index: 2;
 }
+
 .newsletter-title {
-  font-family: 'Dancing Script', cursive;
+  font-family: "Dancing Script", cursive;
   font-size: 3rem;
   font-weight: 700;
   color: #fff;
   margin-bottom: 20px;
 }
+
 .newsletter-subtitle {
   color: #fff;
   font-size: 1.1rem;
   margin-bottom: 30px;
 }
+
 .newsletter-form {
   display: flex;
   gap: 15px;
   max-width: 500px;
   margin: 0 auto;
 }
+
 .newsletter-input {
   flex: 1;
   padding: 15px 20px;
   border: none;
   font-size: 1rem;
 }
+
 .newsletter-btn {
   background-color: #dc3545;
   border: none;
@@ -179,27 +367,31 @@ body {
   border-radius: 8px;
   transition: background-color 0.3s ease;
 }
+
 .newsletter-btn:hover {
   background-color: #c82333;
 }
 
-/* Footer */
+/* Footer Styles */
 .footer {
   background-color: #fff;
   padding: 60px 0 0;
   border-top: none;
-  font-family: 'Roboto', Arial, sans-serif;
+  font-family: "Roboto", Arial, sans-serif;
 }
+
 .footer-main {
   margin-bottom: 40px;
 }
+
 .footer-logo {
-  font-family: 'Dancing Script', cursive;
+  font-family: "Dancing Script", cursive;
   font-size: 2.8rem;
   font-weight: 700;
   color: #222;
   margin-bottom: 18px;
 }
+
 .footer-title {
   font-size: 1.3rem;
   font-weight: 500;
@@ -207,11 +399,13 @@ body {
   margin-bottom: 18px;
   text-transform: none;
 }
+
 .footer-text {
   color: #999;
   font-size: 1.1rem;
   margin-bottom: 0;
 }
+
 .footer-link {
   color: #222;
   text-decoration: none;
@@ -220,24 +414,30 @@ body {
   font-size: 1.1rem;
   transition: color 0.3s;
 }
+
 .footer-link:hover,
 .footer-link.social:hover {
   color: #dc3545;
 }
+
 .footer-col {
   min-width: 200px;
 }
+
+/* Social Icons Row */
 .footer-social-row {
   display: flex;
   gap: 18px;
   margin-bottom: 10px;
 }
+
 .footer-link.social {
   font-size: 1.3rem;
   margin-bottom: 0;
   display: inline-block;
   color: #222;
 }
+
 .footer-bottom {
   width: 100%;
   background: none;
@@ -245,102 +445,19 @@ body {
   margin-top: 16px;
   border-top: none;
 }
+
 .footer-credit {
   color: #999;
   font-size: 1rem;
   margin-bottom: 0;
 }
+
 .footer-text-light {
   color: #999;
   font-size: 1.1rem;
   margin-right: 8px;
 }
 
-/* Forms */
-.form-control {
-  border-radius: 0;
-  border: 1px solid #ddd;
-  padding: 12px 15px;
-  font-size: 1rem;
-}
-.form-control:focus {
-  border-color: #dc3545;
-  box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
-}
-.form-label {
-  font-weight: 500;
-  color: #333;
-  margin-bottom: 8px;
-}
-
-/* Team */
-.team-card {
-  border: none;
-  transition: transform 0.3s ease;
-  margin-bottom: 30px;
-}
-.team-card:hover {
-  transform: translateY(-5px);
-}
-.team-image {
-  height: 300px;
-  object-fit: cover;
-  border-radius: 10px;
-}
-.team-name {
-  font-weight: 600;
-  color: #333;
-  margin-top: 20px;
-  margin-bottom: 5px;
-}
-.team-position {
-  color: #666;
-  font-size: 0.9rem;
-}
-
-/* Home cards */
-.home-product-card {
-  background: #fff;
-  border-radius: 1.25rem;
-  box-shadow: 0 2px 12px rgba(20, 40, 60, 0.08);
-  overflow: hidden;
-  transition: box-shadow 0.15s;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-.home-product-card:hover {
-  box-shadow: 0 4px 22px rgba(20, 40, 60, 0.16);
-}
-.home-product-image {
-  border-top-left-radius: 1.25rem;
-  border-top-right-radius: 1.25rem;
-  width: 100%;
-  object-fit: cover;
-  height: 220px;
-}
-.home-card-title {
-  font-family: 'Dancing Script', cursive;
-  font-size: 1.15rem;
-}
-.home-text-danger {
-  color: #d32f2f;
-}
-.home-star {
-  color: #ffbf00;
-}
-.home-btn-outline-primary {
-  border: 1.5px solid #3763eb;
-  color: #3763eb;
-  background: #fff;
-  transition: 0.2s;
-}
-.home-btn-outline-primary:hover {
-  background: #3763eb;
-  color: #fff;
-}
-
-/* Responsive tweaks like React */
 @media (max-width: 991px) {
   .footer-main {
     flex-direction: column;
@@ -352,34 +469,184 @@ body {
     flex-direction: column;
     text-align: center;
   }
+}
+
+/* Form Styles */
+.form-control {
+  border-radius: 0;
+  border: 1px solid #ddd;
+  padding: 12px 15px;
+  font-size: 1rem;
+}
+
+.form-control:focus {
+  border-color: #dc3545;
+  box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+}
+
+.form-label {
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+/* Team Styles */
+.team-card {
+  border: none;
+  transition: transform 0.3s ease;
+  margin-bottom: 30px;
+}
+
+.team-card:hover {
+  transform: translateY(-5px);
+}
+
+.team-image {
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.team-name {
+  font-weight: 600;
+  color: #333;
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
+.team-position {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .banner-title {
+    font-size: 2.5rem;
+  }
+
+  .newsletter-title {
+    font-size: 2rem;
+  }
+
+  .newsletter-form {
+    flex-direction: column;
+  }
+
+  .logo {
+    font-size: 2rem;
+  }
+}
+
+.home-product-card {
+  background: #fff;
+  border-radius: 1.25rem;
+  box-shadow: 0 2px 12px rgba(20, 40, 60, 0.08);
+  overflow: hidden;
+  transition: box-shadow 0.15s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.home-product-card:hover {
+  box-shadow: 0 4px 22px rgba(20, 40, 60, 0.16);
+}
+
+.home-product-image {
+  border-top-left-radius: 1.25rem;
+  border-top-right-radius: 1.25rem;
+  width: 100%;
+  object-fit: cover;
+  height: 220px;
+}
+
+.home-card-title {
+  font-family: "Dancing Script", cursive;
+  font-size: 1.15rem;
+}
+
+.home-text-danger {
+  color: #d32f2f;
+}
+.home-star {
+  color: #ffbf00;
+}
+
+.home-btn-outline-primary {
+  border: 1.5px solid #3763eb;
+  color: #3763eb;
+  background: #fff;
+  transition: 0.2s;
+}
+.home-btn-outline-primary:hover {
+  background: #3763eb;
+  color: #fff;
+}
+
+.thumbnails-column {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.thumbnail-img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border-color 0.2s;
+}
+
+.thumbnail-img.active {
+  border-color: #007bff;
+}
+
+.main-image-container {
+  align-items: center;
+  justify-content: center;
+}
+
+.main-product-img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+@media (max-width: 767.98px) {
+  .header-top .social-icons {
+    position: absolute;
+    top: 10px;
+    z-index: 10;
+    background: none;
+    gap: 8px;
+  }
+  .header-top .social-icons a {
+    font-size: 1.25rem;
+    margin: 0 6px;
+  }
+  .header-top .d-flex.align-items-center.justify-content-between {
+    flex-direction: column;
+    align-items: flex-start !important;
+    position: relative;
+  }
+}
+
+@media (max-width: 991.98px) {
   .col-lg-3.home-grid-col {
     flex: 0 0 50%;
     max-width: 50%;
   }
 }
-@media (max-width: 768px) {
-  .banner-title {
-    font-size: 2.5rem;
-  }
-  .newsletter-title {
-    font-size: 2rem;
-  }
-  .newsletter-form {
-    flex-direction: column;
-  }
-  .logo {
-    font-size: 2rem;
-  }
-}
+
 @media (max-width: 767.98px) {
   .col-lg-3.home-grid-col,
   .col-md-4.home-grid-col,
   .col-sm-6.home-grid-col {
-    flex: 0 0 100%;
     max-width: 100%;
   }
   .home-product-card {
-    margin-bottom: 1.2rem;
+    min-height: 320px;
   }
   .home-product-image {
     height: 180px;

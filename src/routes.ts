@@ -20,10 +20,6 @@ export const routes: Routes = [
     loadComponent: () => import('./app/pages/checkout/checkout.component').then(m => m.CheckoutComponent)
   },
   {
-    path: 'about',
-    loadComponent: () => import('./app/pages/about/about.component').then(m => m.AboutComponent)
-  },
-  {
     path: 'team',
     loadComponent: () => import('./app/pages/team/team.component').then(m => m.TeamComponent)
   },
