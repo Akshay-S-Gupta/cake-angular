@@ -1,0 +1,170 @@
+/* Home Page Specific Styles */
+
+/* Banner & Hero Section */
+.banner-section {
+  background: url("/assets/Banner/banner5.png") no-repeat top/cover;
+  padding: 80px 0;
+  position: relative;
+  overflow: hidden;
+}
+.banner-section::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: url("/assets/images/banner-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.1;
+  z-index: 1;
+}
+.banner-content {
+  position: relative;
+  z-index: 2;
+}
+.banner-title {
+  font-family: "Dancing Script", cursive;
+  font-size: 4rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 20px;
+}
+@media (max-width: 768px) {
+  .banner-title {
+    font-size: 2.5rem;
+  }
+}
+
+/* Hero Section (optional, if separate from banner) */
+.hero-section {
+  background-image: url("/assets/Banner/banner4.jpg");
+  background-size: cover;
+}
+
+/* Product Carousel */
+.product-carousel {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  gap: 1.5rem;
+  margin: 2rem 0;
+  padding-bottom: 1rem;
+}
+.product-carousel::-webkit-scrollbar {
+  display: none;
+}
+@media (max-width: 991.98px) {
+  .product-carousel {
+    gap: 1rem;
+  }
+}
+
+/* Home Product Card */
+.home-product-card {
+  background: #fff;
+  border-radius: 1.25rem;
+  box-shadow: 0 2px 12px rgba(20, 40, 60, 0.08);
+  overflow: hidden;
+  transition: box-shadow 0.15s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 220px;
+  max-width: 240px;
+  border: 1px solid #eee;
+  padding: 1rem;
+}
+.home-product-card:hover {
+  box-shadow: 0 4px 22px rgba(20, 40, 60, 0.16);
+}
+.card-body {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.home-product-image {
+  border-top-left-radius: 1.25rem;
+  border-top-right-radius: 1.25rem;
+  width: 100%;
+  object-fit: cover;
+  height: 220px;
+  margin-bottom: 1rem;
+}
+@media (max-width: 991.98px) {
+  .home-product-card {
+    min-width: 48vw;
+    max-width: 90vw;
+  }
+  .home-product-image {
+    height: 180px;
+  }
+}
+@media (max-width: 767.98px) {
+  .home-product-card {
+    min-width: 90vw;
+    max-width: 97vw;
+    margin-bottom: 1.2rem;
+  }
+  .home-product-image {
+    height: 180px;
+  }
+}
+
+/* Responsive grid columns */
+@media (max-width: 991.98px) {
+  .col-lg-3.home-grid-col { flex: 0 0 50%; max-width: 50%; }
+}
+@media (max-width: 767.98px) {
+  .col-lg-3.home-grid-col,
+  .col-md-4.home-grid-col,
+  .col-sm-6.home-grid-col {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+/* Home Card Title & Font */
+.home-card-title,
+.script-font {
+  font-family: "Dancing Script", cursive;
+}
+.home-card-title {
+  font-size: 1.15rem;
+}
+
+/* Price & Danger Color */
+.home-text-danger {
+  color: #d32f2f;
+}
+
+/* Star Rating Color */
+.home-star {
+  color: #ffbf00;
+}
+
+/* "View Details" & Outline Button */
+.home-btn-outline-primary {
+  border: 1.5px solid #3763eb;
+  color: #3763eb;
+  background: #fff;
+  transition: 0.2s;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.home-btn-outline-primary:hover {
+  background: #3763eb;
+  color: #fff;
+}
+
+/* Promotional Section */
+.promotional-section {
+  background-image: url("/assets/Banner/banner2.jpg");
+  background-size: cover;
+}
+
+/* Highlight Images */
+.highlight-image {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 1.2rem;
+}
