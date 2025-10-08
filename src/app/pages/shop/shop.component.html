@@ -1,0 +1,23 @@
+<section class="section">
+  <div class="container">
+    <h2>Shop</h2>
+    <div class="row g-3">
+      <div class="col-lg-3 col-md-4 col-sm-6 home-grid-col" *ngFor="let img of images; let i = index">
+        <div class="home-product-card">
+          <img [src]="img" [alt]="'Cake ' + (i+1)" class="home-product-image">
+          <div class="p-3">
+            <div class="d-flex align-items-center justify-content-between">
+              <div class="home-card-title">Cake {{i+1}}</div>
+              <div class="home-text-danger fw-bold">$ {{(i+1)*10}}</div>
+            </div>
+            <div class="d-flex gap-2 mt-2 justify-content-end">
+              <button class="btn btn-outline-custom">Add to cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
