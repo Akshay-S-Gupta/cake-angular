@@ -5,11 +5,15 @@ import { HomeComponent } from './pages/home/home.component';
 import { ShopComponent } from './pages/shop/shop.component';  // Add this import
 import { CartComponent } from './pages/cart/cart.component';
 import { CheckoutComponent } from './pages/checkout/checkout.component';
+import { TeamComponent } from './pages/team/team.component';
+import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'shop', component: ShopComponent },   
   {path: 'cart', component: CartComponent},
+  {path: 'team', component: TeamComponent},
+  {path: 'product/:id', component: ProductDetailComponent},
   // Add this route
   // Add other routes as needed:
   // { path: 'product/:id', component: ProductDetailComponent },
