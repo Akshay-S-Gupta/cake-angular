@@ -10,9 +10,9 @@ import { ImageService } from '../../services/image.service';
   templateUrl: './home.component.html'
 })
 export class HomeComponent {
-  images = [1,2,3,4,5].map(i => this.imageService.getProductImage(i));
+  images = [1, 2, 3, 4, 5].map(i => this.imageService.getProductImage(i));
   banner = this.imageService.getBannerImage();
-  constructor(private imageService: ImageService) {}
+  constructor(private imageService: ImageService) { }
 }
 
 

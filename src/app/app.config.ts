@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import { ApplicationConfig, provideBrowserGlobalErrorListeners, provideZoneChangeDetection } from '@angular/core';
 import { provideRouter } from '@angular/router';
 
@@ -11,13 +10,9 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes)
   ]
 };
-=======
 import { ApplicationConfig } from '@angular/core';
 import { provideHttpClient } from '@angular/common/http';
 
 export const appConfig: ApplicationConfig = {
   providers: [provideHttpClient()]
 };
-
-
->>>>>>> 3f8517c0 (angular project's skeleton)
