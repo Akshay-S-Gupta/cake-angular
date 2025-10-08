@@ -10,3 +10,9 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes)
   ]
 };
+import { ApplicationConfig } from '@angular/core';
+import { provideHttpClient } from '@angular/common/http';
+
+export const appConfig: ApplicationConfig = {
+  providers: [provideHttpClient()]
+};
