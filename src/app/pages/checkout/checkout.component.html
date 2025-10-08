@@ -1,8 +1,204 @@
-<section class="section">
-  <div class="container">
-    <h2>Checkout</h2>
-    <p>Implement your checkout form here.</p>
-  </div>
-</section>
+<!-- Empty Cart State -->
+<div *ngIf="isCartEmpty">
+  <section class="banner-section">
+    <div class="container">
+      <div class="banner-content text-center">
+        <h1 class="banner-title">Checkout</h1>
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-center">
+            <li class="breadcrumb-item">
+              <a routerLink="/" class="text-white text-decoration-none">Home</a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">Checkout</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-5">
+    <div class="container">
+      <div class="text-center">
+        <h2 class="mb-4">Your cart is empty</h2>
+        <p class="text-muted mb-4">
+          Please add items to your cart before proceeding to checkout.
+        </p>
+        <a routerLink="/shop" class="btn btn-primary-custom">Continue Shopping</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- Checkout Form -->
+<div *ngIf="!isCartEmpty">
+  <!-- Banner Section -->
+  <section class="banner-section">
+    <div class="container">
+      <div class="banner-content text-center">
+        <h1 class="banner-title">Checkout</h1>
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-center">
+            <li class="breadcrumb-item">
+              <a routerLink="/" class="text-white text-decoration-none">Home</a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">Checkout</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </section>
+
+  <!-- Checkout Form -->
+  <section class="py-5">
+    <div class="container">
+      <form (ngSubmit)="onSubmit($event)">
+        <div class="row">
+          <!-- Billing Details -->
+          <div class="col-lg-8">
+            <div class="card mb-4">
+              <div class="card-header">
+                <h5 class="mb-0">Billing Details</h5>
+              </div>
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label class="form-label">First Name *</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="firstName"
+                      [(ngModel)]="formData.firstName"
+                      (input)="onInputChange($event)"
+                      required
+                    />
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label class="form-label">Last Name *</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="lastName"
+                      [(ngModel)]="formData.lastName"
+                      (input)="onInputChange($event)"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div class="mb-3">
+                  <label class="form-label">Street Address *</label>
+                  <input
+                    type="text"
+                    class="form-control mb-2"
+                    placeholder="House number and street name"
+                    name="streetAddress"
+                    [(ngModel)]="formData.streetAddress"
+                    (input)="onInputChange($event)"
+                    required
+                  />
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Apartments, suite, etc."
+                    name="apartment"
+                    [(ngModel)]="formData.apartment"
+                    (input)="onInputChange($event)"
+                  />
+                </div>
+
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label class="form-label">Town / City *</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="city"
+                      [(ngModel)]="formData.city"
+                      (input)="onInputChange($event)"
+                      required
+                    />
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label class="form-label">State *</label>
+                    <select
+                      class="form-select"
+                      name="state"
+                      [(ngModel)]="formData.state"
+                      (change)="onInputChange($event)"
+                      required
+                    >
+                      <option value="Karnataka">Karnataka</option>
+                      <option value="Tamil Nadu">Tamil Nadu</option>
+                      <option value="Madhya Pradesh">Madhya Pradesh</option>
+                      <option value="Maharashtra">Maharashtra</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label class="form-label">Zip Code *</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="zipCode"
+                      [(ngModel)]="formData.zipCode"
+                      (input)="onInputChange($event)"
+                      required
+                    />
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label class="form-label">Phone *</label>
+                    <input
+                      type="tel"
+                      class="form-control"
+                      name="phone"
+                      [(ngModel)]="formData.phone"
+                      (input)="onInputChange($event)"
+                      required
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Order Summary -->
+          <div class="col-lg-4">
+            <div class="card mb-4">
+              <div class="card-header">
+                <h5 class="mb-0">Cart Totals</h5>
+              </div>
+              <div class="card-body">
+                <div class="d-flex justify-content-between mb-2">
+                  <span>SUBTOTAL</span>
+                  <span>${{ totalPrice.toFixed(2) }}</span>
+                </div>
+                <div class="d-flex justify-content-between mb-2">
+                  <span>SHIPPING</span>
+                  <span>Free</span>
+                </div>
+                <hr />
+                <div class="d-flex justify-content-between">
+                  <strong>TOTAL</strong>
+                  <strong>${{ totalPrice.toFixed(2) }}</strong>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <button
+                type="submit"
+                class="btn btn-primary-custom w-100"
+              >
+                PLACE AN ORDER
+              </button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+</div>
 
 

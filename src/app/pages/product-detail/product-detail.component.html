@@ -37,7 +37,7 @@
         <!-- Main Image -->
         <div class="main-image-container flex-grow-1">
           <img
-            [src]="product.images[selectedImage]"
+            [src]="product.images && product.images.length > 0 ? product.images[selectedImage] : product.mainImage"
             [alt]="product.name"
             style="max-width:350px; border-radius:12px;"
           />

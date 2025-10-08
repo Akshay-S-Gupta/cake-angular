@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class HttpService {
-  private readonly baseUrl = 'http://localhost:3001';
+  private readonly baseUrl = 'http://localhost:3000'; // Changed to match json-server default port
   constructor(private http: HttpClient) {}
 
   get<T>(path: string): Observable<T> { return this.http.get<T>(`${this.baseUrl}${path}`); }

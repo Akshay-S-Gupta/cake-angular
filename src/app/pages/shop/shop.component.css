@@ -1,0 +1,168 @@
+/* Product Card Container*/
+.product-card,
+.card.product-card {
+  display: flex;
+  flex-direction: column;
+  height: auto !important;
+  min-height: 400px !important; /* Reduced for tighter layout */
+  border: none;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s, box-shadow 0.3s;
+  margin-bottom: 18px !important;
+  background: #fff;
+}
+
+.product-card:hover,
+.card.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Image Wrapper  */
+.product-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 300px !important; 
+  min-height: 300px !important;
+}
+
+/* Product Image Sizing */
+.product-image,
+.card-img-top.product-image {
+  width: 100%;
+  height: 300px !important;
+  max-height: 300px !important;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+  display: block;
+}
+
+/* Floating Cart/Tick Icon (default: hidden) */
+.cart-icon-btn {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.85);
+  border: none;
+  border-radius: 50%;
+  padding: 6px;
+  cursor: pointer;
+  display: none; /* Hidden by default—shows on hover */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: background 0.2s, box-shadow 0.2s;
+}
+
+.product-image-wrapper:hover .cart-icon-btn {
+  display: block;
+}
+
+.product-image-wrapper:hover .cart-icon-btn.added {
+  background: #e9ffe8;
+}
+
+/* Icon image size */
+.cart-icon-img {
+  width: 22px;
+  height: 22px;
+  display: block;
+}
+
+/* Card Body Flex Column Layout - Remove excess push */
+.card-body.d-flex.flex-column {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  height: auto !important;
+  justify-content: flex-start !important; /* Prevent buttons from pushing to bottom */
+  padding-bottom: 0.4rem !important;
+  padding-top: 0.6rem !important;
+}
+
+/* Content Area Above Button - Less margin */
+.product-info {
+  flex: 0 0 auto;
+  margin-bottom: 0.2rem !important;
+}
+
+/* Product Title */
+.product-title,
+.card-title.product-title {
+  font-family: "Dancing Script", cursive;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 5px !important;
+  word-break: break-word;
+}
+
+/* Product Price and Original Price */
+.product-price,
+.card-text.product-price {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #dc3545;
+}
+
+.original-price {
+  text-decoration: line-through;
+  color: #999;
+  margin-right: 8px;
+}
+
+.mt-auto {
+  margin-top: 0 !important;
+}
+
+/* Rating Stars and Spacing */
+.product-card .fa-star {
+  font-size: 1em;
+}
+
+@media (max-width: 768px) {
+  .product-card,
+  .card.product-card {
+    min-height: 180px !important;
+    margin-bottom: 12px !important;
+  }
+
+  .product-image-wrapper {
+    height: 160px !important;
+    min-height: 160px !important;
+    overflow: hidden;
+    background: #fafafa;
+  }
+
+  .product-image,
+  .card-img-top.product-image {
+    width: 100%;
+    height: 160px !important;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+    display: block;
+  }
+
+  
+  .product-card .product-rating,
+  .product-card .fa-star,
+  .product-card .card-text.product-rating,
+  .product-card .rating-value,
+  .product-card .rating-stars,
+  .product-card .ms-2.text-muted,
+  .product-card .product-rating-row, 
+  .product-card .rating-section,      
+  .product-card .ratings,             
+  .product-card .product-info .product-rating,
+  .product-card .product-rating-block {
+    display: none !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  /* If ratings are in their own div, remove its margin too */
+  .product-rating-row,
+  .rating-section {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+}

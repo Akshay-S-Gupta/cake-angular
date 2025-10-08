@@ -47,9 +47,9 @@
         <div class="d-flex flex-wrap gap-2">
           <button *ngFor="let category of categories"
                   class="btn"
-                  [ngClass]="selectedCategory === category ? 'btn-primary' : 'btn-outline-primary'"
-                  (click)="setSelectedCategory(category)">
-            {{ category }}
+                  [ngClass]="selectedCategory === category.name ? 'btn-primary' : 'btn-outline-primary'"
+                  (click)="setSelectedCategory(category.name)">
+            {{ category.name }}
           </button>
         </div>
       </div>
@@ -74,7 +74,7 @@
                     [attr.aria-label]="isInCart(product.id) ? 'Added to cart' : 'Add to cart'"
                     [disabled]="isInCart(product.id)"
                     style="position:absolute;top:10px;right:10px;z-index:5;background:white;border:none;border-radius:50%;padding:6px;">
-              <img [src]="isInCart(product.id) ? '/Icons/tick.png' : '/Icons/cart.png'"
+              <img [src]="isInCart(product.id) ? 'assets/Icons/tick.png' : 'assets/Icons/cart.png'"
                    [alt]="isInCart(product.id) ? 'Added to cart' : 'Add to cart'"
                    class="cart-icon-img"
                    style="width:24px;height:24px;" />
