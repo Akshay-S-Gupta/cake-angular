@@ -51,8 +51,13 @@ export class DatabaseService {
     // Load products
     this.http.get<Product[]>('/products').subscribe({
       next: (products) => {
-        console.log('Products loaded:', products);
-        this.productsSubject.next(products);
+        // Normalize incoming product data (IDs from db.json may be strings)
+        const normalized = products.map(p => ({
+          ...p,
+          id: Number((p as any).id)
+        } as Product));
+        console.log('Products loaded:', normalized);
+        this.productsSubject.next(normalized);
       },
       error: (error) => {
         console.error('Error loading products:', error);
@@ -64,8 +69,10 @@ export class DatabaseService {
     // Load categories
     this.http.get<Category[]>('/categories').subscribe({
       next: (categories) => {
-        console.log('Categories loaded:', categories);
-        this.categoriesSubject.next(categories);
+        // Normalize category IDs too (db.json might store them as strings)
+        const normalizedCats = categories.map(c => ({ ...c, id: Number((c as any).id) } as Category));
+        console.log('Categories loaded:', normalizedCats);
+        this.categoriesSubject.next(normalizedCats);
       },
       error: (error) => {
         console.error('Error loading categories:', error);
