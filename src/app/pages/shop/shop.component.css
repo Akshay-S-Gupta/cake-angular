@@ -3,9 +3,8 @@
 .card.product-card {
   display: flex;
   flex-direction: column;
-  /* height: auto !important; */
-  min-height: 400px !important;
-  /* Reduced for tighter layout */
+  height: auto !important;
+  min-height: 400px !important; /* Reduced for tighter layout */
   border: none;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s, box-shadow 0.3s;
@@ -23,7 +22,7 @@
 .product-image-wrapper {
   position: relative;
   width: 100%;
-  height: 300px !important;
+  height: 300px !important; 
   min-height: 300px !important;
 }
 
@@ -49,8 +48,7 @@
   border-radius: 50%;
   padding: 6px;
   cursor: pointer;
-  display: none;
-  /* Hidden by default—shows on hover */
+  display: none; /* Hidden by default—shows on hover */
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   transition: background 0.2s, box-shadow 0.2s;
 }
@@ -76,8 +74,7 @@
   flex-direction: column;
   flex: 1 1 auto;
   height: auto !important;
-  justify-content: flex-start !important;
-  /* Prevent buttons from pushing to bottom */
+  justify-content: flex-start !important; /* Prevent buttons from pushing to bottom */
   padding-bottom: 0.4rem !important;
   padding-top: 0.6rem !important;
 }
@@ -123,11 +120,11 @@
 }
 
 @media (max-width: 768px) {
-
   .product-card,
   .card.product-card {
     min-height: 180px !important;
     margin-bottom: 12px !important;
+    padding-bottom: 16px !important;
   }
 
   .product-image-wrapper {
@@ -146,16 +143,16 @@
     display: block;
   }
 
-
+  
   .product-card .product-rating,
   .product-card .fa-star,
   .product-card .card-text.product-rating,
   .product-card .rating-value,
   .product-card .rating-stars,
   .product-card .ms-2.text-muted,
-  .product-card .product-rating-row,
-  .product-card .rating-section,
-  .product-card .ratings,
+  .product-card .product-rating-row, 
+  .product-card .rating-section,      
+  .product-card .ratings,             
   .product-card .product-info .product-rating,
   .product-card .product-rating-block {
     display: none !important;
@@ -163,7 +160,10 @@
     margin: 0 !important;
     padding: 0 !important;
   }
-
+  .product-info {
+    margin-bottom: 0.2rem !important;
+    padding-bottom: 0 !important;
+  }
   /* If ratings are in their own div, remove its margin too */
   .product-rating-row,
   .rating-section {
