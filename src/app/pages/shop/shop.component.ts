@@ -5,11 +5,14 @@ import { NgFor, NgIf, NgClass } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
+
 @Component({
   selector: 'app-shop',
   standalone: true,
   imports: [NgFor, NgIf, NgClass, RouterLink, FormsModule],
-  templateUrl: './shop.component.html'
+  templateUrl: './shop.component.html',
+  styleUrls: ['./shop.component.css']
+
 })
 export class ShopComponent implements OnInit {
   products: Product[] = [];
