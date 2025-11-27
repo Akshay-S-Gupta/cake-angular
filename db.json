@@ -274,21 +274,21 @@
   "teamMembers": [
     {
       "id": "1",
+      "name": "Mr Akshay S Gupta",
+      "position": "Team Lead",
+      "image": "team/Akshay.jpg"
+    },
+    {
+      "id": "2",
       "name": "Ms Anushka Kulkarni",
       "position": "Frontend Dev",
       "image": "team/Anushka.jpg"
     },
     {
-      "id": "2",
+      "id": "3",
       "name": "Ms Maria S",
       "position": "Frontend Dev",
       "image": "team/Maria.jpg"
-    },
-    {
-      "id": "3",
-      "name": "Mr Akshay S Gupta",
-      "position": "Frontend Dev",
-      "image": "team/Akshay.jpg"
     }
   ],
   "users": [
